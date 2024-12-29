@@ -1,0 +1,14 @@
+workflows:
+  android-apk:
+    name: Build Android APK
+    environment:
+      vars:
+        GRADLE_TASK: "assembleDebug" # Specify Gradle task
+      android:
+        image: android:2022.08.1 # Use an Android build image
+    scripts:
+      - echo "Starting the build process..."
+      - chmod +x ./gradlew # Make the Gradle wrapper executable
+      - ./gradlew $GRADLE_TASK # Run the Gradle task
+    artifacts:
+      - build/outputs/**/*.apk # Specify the path to APK artifacts
