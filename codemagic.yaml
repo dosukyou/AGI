@@ -3,12 +3,11 @@ workflows:
     name: Build Android APK
     environment:
       vars:
-        GRADLE_TASK: "assembleDebug" # Specify Gradle task
-      android:
-        image: android:2022.08.1 # Use an Android build image
+        GRADLE_TASK: "assembleDebug" # Gradle task to build APK
+      flutter: false # Explicitly set to false for non-Flutter projects
     scripts:
       - echo "Starting the build process..."
       - chmod +x ./gradlew # Make the Gradle wrapper executable
       - ./gradlew $GRADLE_TASK # Run the Gradle task
     artifacts:
-      - build/outputs/**/*.apk # Specify the path to APK artifacts
+      - app/build/outputs/**/*.apk # Location of the APK files
