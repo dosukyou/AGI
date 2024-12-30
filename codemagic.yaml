@@ -7,6 +7,6 @@ workflows:
     scripts:
       - echo "Starting the build process..."
       - chmod +x ./gradlew # Make the Gradle wrapper executable
-      - ./gradlew $GRADLE_TASK # Execute the Gradle build task
+      - ./gradlew $GRADLE_TASK --stacktrace
     artifacts:
       - app/build/outputs/**/*.apk # Path to APK artifacts
