@@ -1,8 +1,8 @@
 plugins {
     id 'com.android.application'
 }
-
 android {
+    namespace 'com.agifinance.webapp'
     compileSdk 33
 
     defaultConfig {
