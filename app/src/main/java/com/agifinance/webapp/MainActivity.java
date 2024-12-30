@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
+        webView.clearCache(true);
         webSettings.setJavaScriptEnabled(true);
         webSettings.setDomStorageEnabled(true); // Enable DOM storage
         webSettings.setAppCacheEnabled(true); // Enable app cache
